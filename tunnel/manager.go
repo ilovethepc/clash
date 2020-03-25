@@ -12,7 +12,8 @@ func init() {
 		upload:   make(chan int64),
 		download: make(chan int64),
 	}
-	DefaultManager.handle()
+	// igniter
+	//DefaultManager.handle()
 }
 
 type Manager struct {
