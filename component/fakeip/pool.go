@@ -124,7 +124,7 @@ func New(ipnet *net.IPNet, size int, host *trie.Trie) (*Pool, error) {
 	min := ipToUint(ipnet.IP) + 2
 
 	ones, bits := ipnet.Mask.Size()
-	total := 1<<uint(bits-ones) - 2
+	total := 1<<uint(bits-ones) - 3 /* network 0, gateway 1, broadcast 255 */
 
 	if total <= 0 {
 		return nil, errors.New("ipnet don't have valid ip")
